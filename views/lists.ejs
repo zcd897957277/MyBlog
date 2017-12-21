@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/normal.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/masonry-docs.css">
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+</head>
+    <body class="body">
+        <!--左边：导航区-->
+        <%- include('./home.ejs')%>
+        <!--右边：内容区-->
+
+    </body>
+<script type="text/javascript" src="/javascripts/home.js"></script>
+<!--瀑布流-->
+<script type="text/javascript" src="/javascripts/masonry-docs.min.js"></script>
+<script>
+    $('#list>li').masonry({});
+</script>
+</html>

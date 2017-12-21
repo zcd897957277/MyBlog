@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title%></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/normal.css">
+    <link rel="stylesheet" href="/stylesheets/user.css">
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+</head>
+<body class="body">
+    <!--右边：导航区-->
+    <%- include("./user.ejs") %>
+    <!--右边：文章展示-->
+    <div class="articleContentShow" id="articleContentShow">
+        <p class="article-back"><a href="/body/userArticles">返回</a></p>
+        <!--<div class="article-all">-->
+            <!--<p class="articleShow-title">URL参数解析方法</p>-->
+            <!--<div class="article-cont">-->
+                <!--<p class="article-cont-p">-->
+                    <!--这几天遇到这样一个需求，需要在不同页面之间传递参数，一般我们都是通过URL来传递，如下：-->
+                <!--</p>-->
+                <!--<div class="article-cont-div">-->
+                    <!--window.open('test.html?id=123&name=456);-->
+                <!--</div>-->
+                <!--<p class="article-cont-p">-->
+                    <!--然后在新窗口的时候我们再用window.location.search方法获取?后面的参数内容，但是拿到的内容是“?id=123&name=456”-->
+                    <!--这样的形式，我们还需要进行一系列的字符串处理才能拿到我们需要的信息，这样就比较麻烦一些了，所以我们就基于这个需求-->
+                    <!--封装一个工具方法来把参数后面的内容解析成一个对象字面量来供我们使用，代码如下：-->
+                <!--</p>-->
+                <!--<div class="article-cont-div">-->
+                    <!--"function urlParse(){-->
+                    <!--var url=window.location.search;-->
+                    <!--var obj={};-->
+                    <!--var reg=/[?&][^?&]+=[^?&]+/g;//正则的意思是开头是?或者&符号，之后接着的是xxx=xxx的形式，其中xxx都不能有?和&-->
+                    <!--var arr=url.match(reg);//match返回匹配到的值至数组中-->
+                    <!--if(arr){-->
+                    <!--arr.forEach(function(item){-->
+                    <!--var tempArr=item.substring(1).split('=');-->
+                    <!--var key=decodeURIComponent(tempArr[0]);//decodeURIComponent() 函数可对 encodeURIComponent() 函数编码的 URI 进行解码。<br>-->
+                    <!--var val=decodeURIComponent(tempArr[1]);-->
+                    <!--obj[key]=val;-->
+                    <!--});-->
+                    <!--}-->
+                    <!--return obj;-->
+                    <!--}-->
+                    <!--urlParse();//return {id:123,name:456}"-->
+                <!--</div>-->
+                <!--<p>-->
+                    <!--这样只要在新窗口调用这个方法我们就能返回一个对象字面量的参数来供我们使用了。-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class='article-all'>
+            <p class='articleShow-title'><%-result[0].blogName%></p>
+            <div class='article-cont'><%-result[0].blogText%></div>
+        </div>
+    </div>
+</body>
+</html>

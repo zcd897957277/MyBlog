@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/normal.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+</head>
+    <body class="body">
+        <!--左边：导航区-->
+        <%- include('./home.ejs')%>
+        <!--中间：标签管理-->
+        <div class="labelCont" id="labelCont">
+            <div class="label-title">
+                <img class="label-big-icon left" src="/images/article-title.png" alt="标签管理">
+                <span class="label-manage">标签管理</span>
+                <!--<img class="label-big-icon right" src="/images/subtract.png" alt="添加标签">-->
+            </div>
+            <% if (resultLabel.length) { %>
+            <ul class="labels">
+                <!--<li class="labels-li">-->
+                    <!--<img class="label-small-icon" src="/images/labels.png">-->
+                    <!--<span class="labels-name">node</span>-->
+                    <!--<span class="labels-num">(0)</span>-->
+                <!--</li>-->
+                <!--<li class="labels-li">-->
+                    <!--<img class="label-small-icon" src="/images/labels.png">-->
+                    <!--<span class="labels-name">javascript</span>-->
+                    <!--<span class="labels-num">(0)</span>-->
+                <!--</li>-->
+                <!--<li class="labels-li">-->
+                    <!--<img class="label-small-icon" src="/images/labels.png">-->
+                    <!--<span class="labels-name">css</span>-->
+                    <!--<span class="labels-num">(0)</span>-->
+                <!--</li>-->
+                <!--<li class="labels-li">-->
+                    <!--<img class="label-small-icon" src="/images/labels.png">-->
+                    <!--<span class="labels-name">Angular</span>-->
+                    <!--<span class="labels-num">(0)</span>-->
+                <!--</li>-->
+                <!--<li class="labels-li">-->
+                    <!--<img class="label-small-icon" src="/images/labels.png">-->
+                    <!--<span class="labels-name">未分类</span>-->
+                    <!--<span class="labels-num">(0)</span>-->
+                <!--</li>-->
+                <% resultLabel.forEach(function(item,index){ %>
+                <% if(index < resultLabel.length-1) {%>
+                <li class="labels-li">
+                    <img class="label-small-icon" src="/images/labels.png">
+                    <a href="/body/labelManage?label=<%-item.label%>" class="labels-name"><%-item.label%></a>
+                    <span class="labels-num">(<%-item.label_num%>)</span>
+                </li>
+                <% } %>
+                <% }) %>
+            </ul>
+            <% } %>
+        </div>
+        <!--右边：文章列表-->
+        <% if (resultLabel.length) { %>
+        <ul class="list" id="list">
+            <!--<li>-->
+                <!--<p class="list-title">javascript检测对象中是否存在某个属性</p>-->
+                <!--<p class="list-intro">检测对象中属性的存在与否可以通过几种方法来判断。 1.使用in关键字 该方法可以判断对象的自有属性和继承来的属性是否存在。</p>-->
+                <!--<div class="list-div">-->
+                    <!--<span class="list-date left">2017-11-12</span><span class="list-classify right">javascript</span>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="list-title">CSS hack技巧大全</p>-->
+                <!--<div class="list-div">-->
+                    <!--<span class="list-date left">2017-11-13</span><span class="list-classify right">css</span>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="list-title">echarts自定义tooltip提示框内容</p>-->
+                <!--<p class="list-intro">检测对象中属性的存在与否可以通过几种方法来判断。 1.使用in关键字 该方法可以判断对象的自有属性和继承来的属性是否存在。</p>-->
+                <!--<div class="list-div">-->
+                    <!--<span class="list-date left">2017-11-14</span><span class="list-classify right">echarts</span>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="list-title">mongodb的用户认证</p>-->
+                <!--<p class="list-intro">检测对象中属性的存在与否可以通过几种方法来判断。 1.使用in关键字 该方法可以判断对象的自有属性和继承来的属性是否存在。</p>-->
+                <!--<div class="list-div">-->
+                    <!--<span class="list-date left">2017-11-15</span><span class="list-classify right">mongodb</span>-->
+                <!--</div>-->
+            <!--</li>-->
+            <% resultLabel[resultLabel[resultLabel.length-1].labelOrder].labelCont.forEach(function(item){ %>
+            <li>
+                <p class="list-title"><%-item.blogName%></p>
+
+                <p class="list-intro"><%-item.blogText%></p>
+                <div class="list-div">
+                    <span class="list-date left"><%-item.blogTime%></span><span class="list-classify right"><%-item.blogLabel%></span>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+        <% } %>
+    </body>
+<script type="text/javascript" src="/javascripts/home.js"></script>
+</html>

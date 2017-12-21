@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/normal.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+</head>
+    <body class="body">
+        <!--左边：导航区-->
+        <%- include('./home.ejs')%>
+        <!--右边：内容区-->
+        <!--键入blog-->
+        <div class="rightCont" id="inputBlog">
+            <!--标题-->
+            <h1>My Blog</h1>
+            <!--内容输入区-->
+            <ul>
+                <li>
+                    <span class="formSpan">博客名称</span><input class="blog_name" type="text" maxlength="" placeholder="请输入博客名">
+                </li>
+                <li class="li-label">
+                    <span class="formSpan">博客标签</span><input class="blog_label" type="text" maxlength="" placeholder="请输入内容">
+                    <label class="label-rule hidden-label">输入的标签不符合规则</label>
+                </li>
+                <li>
+                    <span class="formSpan" style="vertical-align: top;">博客内容</span><textarea class="blog_text" placeholder="请输入个人介绍"></textarea>
+                </li>
+            </ul>
+            <!--表单上传按钮-->
+            <button class="btn btn-info">保存修改</button>
+        </div>
+    </body>
+<script type="text/javascript" src="/javascripts/home.js"></script>
+<script type="text/javascript" src="/javascripts/body/inputBlog.js"></script>
+</html>

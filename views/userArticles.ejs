@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title%></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/normal.css">
+    <link rel="stylesheet" href="/stylesheets/user.css">
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="/javascripts/body/userArticles.js"></script>-->
+</head>
+<body class="body">
+    <!--右边：导航区-->
+    <%- include("./user.ejs") %>
+    <!--右边：文章列表-->
+    <div class="rightCont" id="rightCont">
+        <p>最新文章</p>
+        <!--<ul class="ul-article">-->
+            <!--<li class="li-title"><b>URL参数解析方法</b></li>-->
+            <!--<li class="li-content">-->
+                <!--这几天遇到这样一个需求，需要在不同页面之间传递参数，一般我们都是通过URL来传递，如下然后在新窗口的-->
+                <!--时候我们再用window.location.search方法获取?后面的参数内容，但是拿到的内容是“?id=123&name=456”-->
+                <!--这样的形式，我们还需要进行一系列的字符串处理才能拿到我们需要的信息，这样就比较麻烦一些了，所以我们-->
+                <!--就基于这个需求封装一个工具方法来把参数后面的内容解析成一个对象字面量来供我们使用，代码-->
+            <!--</li>-->
+            <!--<li class="li-date">-->
+                <!--2017-01-12 16:42:09-->
+            <!--</li>-->
+        <!--</ul>-->
+        <% if (resultZui.length) { %>
+        <ul class='ul-article' id='"+getId+"'>
+            <% resultZui.forEach(function(item){ %>
+            <li class='li-title'><a href="/body/userArticleShow?_id=<%-item._id%>"><%-item.blogName%></a></li>
+            <li class='li-content'><%-item.blogText%></li>
+            <li class='li-date'><%-item.blogTime%></li>
+            <% }) %>
+        </ul>
+        <% } %>
+    </div>
+</body>
+</html>

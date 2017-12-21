@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%- title%></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/normal.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/login.js"></script>
+</head>
+<body class="body">
+<h4><%- title%></h4>
+<div class="input-output">
+    <div class="input-group">
+        <span class="input-group-addon login-name" id="basic-addon1">用户名</span>
+        <input type="text" class="form-control login-input-phone" placeholder="手机号" aria-describedby="basic-addon1" autofocus>
+    </div>
+    <icon class="hideIcon"></icon>
+    <label for="basic-url" class="login-warn hideIcon">请输入正确的手机号</label>
+</div>
+
+<div class="input-output">
+    <div class="input-group">
+        <span class="input-group-addon login-name" id="basic-addon1">密码</span>
+        <!--密码长度要求不小于6位，必须含有大小写字母、数字或者特殊符号中的两种-->
+        <input type="password" class="form-control login-input-password" placeholder="请输入密码" aria-describedby="basic-addon1">
+        <span class="input-group-addon login-name password-strong">密码强度</span>
+    </div>
+    <icon class="hideIcon password-icon"></icon>
+    <label for="basic-url" class="password-label login-warn hideIcon">密码由6-10位字母、数字混合组成</label>
+</div>
+<button type="button" class="btn btn-info login-btn">登录</button>
+<!--登录提示-->
+</body>
+</html>

@@ -1,0 +1,49 @@
+* {
+    margin: 0; padding: 0;
+}
+html {margin: 0; padding: 0; border: currentColor; -o-border-image: none; border-image: none;}
+body {background: rgb(255, 255, 255);font-family: "Microsoft YaHei"; font-size: 12px;}
+a {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+a:focus {
+    text-decoration: none;
+}
+a img {
+    border: currentColor; -o-border-image: none; border-image: none;
+}
+a:focus {
+
+}
+ul {
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+img {
+    border: currentColor; -o-border-image: none; border-image: none; display: inline;
+}
+input {
+    outline:none;
+    resize: none;
+}
+textarea {
+    outline:none;
+    resize: none;
+}
+div {
+    resize: none;
+}
+.left{	float:left;}
+.right{	float:right;}
+.clear {clear: both;}

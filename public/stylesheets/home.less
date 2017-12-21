@@ -1,0 +1,289 @@
+@inlineBlock:inline-block;
+@absolute:absolute;
+@labelBorder:2px solid #f1f1f1;
+
+.btn-group>.btn:first-child{
+  outline: none;
+}
+.leftNav{
+  width: 8%;
+  background: #f8f8f8;
+  border-right:@labelBorder;
+  display: @inlineBlock;
+  position: @absolute;
+  margin: 0;
+  padding:0;
+  img{
+    width: 80%;
+    height: auto;
+    display: @inlineBlock;
+  }
+  li{
+    padding: 0 15%;
+    text-align: center;
+  }
+}
+.li-nav-1,.li-nav-2,.li-nav-3,.li-nav-4{
+  position: @absolute;
+  cursor:pointer;
+}
+.li-nav-1{
+  top: 10%;
+}
+.li-nav-2{
+  top: 30%;
+}
+.li-nav-3{
+  top: 50%;
+}
+.li-nav-4{
+  top: 70%;
+}
+//输入blog
+.rightCont{
+  display: @inlineBlock;
+  text-align: center;
+  width: 89%;
+  position: @absolute;
+  top: 7%;
+  h1{
+    color: #20a0ff;
+    display: @inlineBlock;
+    margin-bottom:3%;
+  }
+  li.li-label{
+    position: relative;
+  }
+  li{
+    margin-bottom: 20px;
+    .formSpan{
+      font-size: 16px;
+      color: #5e6d82;
+      margin-right: 10px;
+    }
+    input[type=text],textarea{
+      border: 2px solid #c0ccda;
+      padding: 0 6px;
+      width: 30%;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+    input[type=text]{
+      height: 36px;
+    }
+    textarea{
+      line-height: 24px;
+      height: 180px;
+      resize:both;
+    }
+    .label-rule{
+      position: absolute;
+      top: 6px;
+      margin-left: 15px;
+      color: red;
+    }
+    .hidden-label{
+      display: none;
+    }
+  }
+}
+//标签管理
+.labelCont{
+  position: @absolute;
+  display: @inlineBlock;
+  width: 16%;
+  border-right: @labelBorder;
+  min-width: 206px;
+}
+.label-big-icon,.label-small-icon{
+  width: 30px;
+  height: 30px;
+  display: @inlineBlock;
+}
+.label-title,.labels{
+  width: 100%;
+}
+.label-title{
+  padding: 10% 7%;
+  border-bottom: @labelBorder;
+  .label-manage{
+    vertical-align: sub;
+    display: @inlineBlock;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+.labels{
+  padding: 0 10%;
+  margin: 0;
+  .labels-li{
+    padding: 20px 10px;
+    border-bottom: @labelBorder;
+    cursor: pointer;
+    .labels-name,.labels-title{
+      font-weight: bold;
+      color: #20a0ff;
+    }
+    .labels-name{
+      font-size: 16px;
+    }
+    .labels-num{
+      color: #7e7e7e;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+    .labels-title{
+      font-size: 20px;
+      margin-bottom: 10px;
+      line-height: 20px;
+      a{
+        color: #20a0ff;
+      }
+    }
+    .labels-date{
+      color: #b3bbbc;
+      font-size: 14px;
+    }
+  }
+}
+
+.articleContent,.articleContentShow{
+  min-width: 984px;
+  position: @absolute;
+  display: @inlineBlock;
+}
+
+//文章编辑
+.articleContent{
+  .article-title{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: @labelBorder;
+    padding: 1% 2%;
+    margin: 0;
+  }
+  .article-info{
+    padding: 15px 20px;
+    border-bottom: @labelBorder;
+    .article-label{
+      width: 35px;
+      height: 35px;
+      display: @inlineBlock;
+      vertical-align: text-bottom;
+    }
+    .article-span{
+      display: @inlineBlock;
+      position: relative;
+      .article-label-name{
+        border: 2px solid #bef1d4;
+        background: #e8faf0;
+        color: #25d272;
+        font-size: 14px;
+        //padding: 6px 30px 6px 6px;叉叉padding
+        padding: 6px 6px 6px 6px;
+        border-radius: 8px;
+        vertical-align: super;
+        display: @inlineBlock;
+        margin-left: 10px;
+      }
+      .form-control-feedback{
+        color: #25d272;
+        margin-top: 3px;
+        display: @inlineBlock;
+      }
+    }
+    .article-btns{
+      display: @inlineBlock;
+      vertical-align: bottom;
+      float: right;
+      .btn-hong{
+        color: #ffffff;
+        background:#ff4949;
+        border-color: #ff4949;
+      }
+      .btn-lan{
+        color: #ffffff;
+        background:#20a0ff;
+        border-color: #20a0ff;
+      }
+    }
+  }
+  #upload-rich-text{
+    margin-left: 2px;
+  }
+}
+//文章展示
+.articleContentShow{
+  padding: 20px;
+  .articleShow-title{
+    font-size: 20px;
+    padding-left: 10px;
+    border-left: 6px solid #a0a0a1;
+    font-weight: bold;
+  }
+  .article-cont{
+    height: 300px;
+    min-height: 300px;
+    overflow: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    .article-cont-p,.article-cont-div{
+      font-size: 16px;
+      color: #34495e;
+    }
+    .article-cont-div{
+      margin-bottom: 10px;
+    }
+  }
+  .btn-modify{
+    position: relative;
+    padding-left: 35px;
+    .pencil{
+      left: 0;
+    }
+  }
+}
+
+//随机显示blog
+.list{
+  min-width: 984px;
+  position: @absolute;
+  display: @inlineBlock;
+  overflow: hidden;
+  padding-left: 10px;
+  li{
+    max-width: 300px;
+    border-radius: 4px;
+    float: left;
+    background: #ffffff;
+    border: 2px solid #111111;
+    padding: 10px 20px;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+    p.list-title{
+      font-weight: bold;
+      text-align: center;
+      font-size: 14px;
+      //width: 256px;
+      overflow: hidden;
+    }
+    div.list-div{
+      overflow: hidden;
+      span.list-date{
+        margin-right: 20px;
+      }
+    }
+  }
+}
+.tipInputBlog{
+  background: white;
+  width: 104px;
+  padding: 5px;
+  border: 1px solid red;
+  border-radius:12px;
+  margin: 0 auto;
+  z-index: 100;
+  color: red;
+}
+/*# sourceMappingURL=data:application/json;base64,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 */
